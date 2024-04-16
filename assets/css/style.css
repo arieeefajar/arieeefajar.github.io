@@ -1,0 +1,837 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    font-size: 1rem;
+    background-color: #393646;
+    color: #ffffff;
+}
+
+.header {
+    width: 100%;
+    margin-inline: auto;
+    position: fixed;
+    z-index: 9999;
+}
+
+.header .nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-block: 20px;
+    background-color: #393646;
+}
+
+.nav .nav_icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.nav .nav_icon a {
+    text-decoration: none;
+}
+
+.nav .nav_icon .nav_icon_name {
+    font-family: 'monsalva', cursive;
+    font-size: 1.5rem;
+    font-style: italic;
+    font-weight: bold;
+    text-decoration: none;
+    text-shadow: 0 0 0.5rem #F4EEE0;
+    color: #ffffff;
+}
+
+.nav .nav_icon .nav_icon_name:hover {
+    filter: drop-shadow(0 0 0.5rem #6D5D6E);
+}
+
+.nav .nav_menu .list_menu {
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 2rem 1rem;
+    list-style: none;
+}
+
+.nav .nav_menu .list_menu .list_item {
+    padding: 0.5rem 2rem;
+    position: relative;
+    font-size: 1.05rem;
+    font-weight: 500;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.nav .nav_menu .list_menu .list_item .link_menu {
+    position: relative;
+    text-decoration: none;
+    color: #6D5D6E;
+    transition: color 0.5s;
+}
+
+.nav .nav_menu .list_menu .list_item .link_menu:hover {
+    color: #ffffff;
+}
+
+.nav .nav_menu .list_menu .list_item .link_menu::after {
+    content: '';
+    width: 0%;
+    height: 2px;
+    background-color: #F4EEE0;
+    position: absolute;
+    left: 0;
+    bottom: -.1rem;
+    transition: width .3s;
+}
+
+.nav .nav_menu .list_menu .list_item .link_menu:hover::after,
+.nav .nav_menu .list_menu .list_item.active .link_menu:hover::after {
+    width: 100%;
+}
+
+.nav .nav_menu .list_menu .list_item.active .link_menu {
+    color: #ffffff;
+}
+
+.nav .nav_menu .list_menu .list_item.active .link_menu::after {
+    width: 30%;
+}
+
+.nav .nav_button {
+    display: none;
+}
+
+.main {
+    flex: 1;
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.hero {
+    padding: 2rem;
+}
+
+.hero .hero_container {
+    display: flex;
+    align-items: center;
+    color: #ffffff;
+    padding: 8rem 2rem;
+}
+
+.hero .hero_description {
+    flex: 1 1;
+}
+
+.hero .hero_container .hero_title {
+    font-size: 3rem;
+    text-transform: uppercase;
+}
+
+.hero .hero_container p {
+    line-height: 1.5rem;
+}
+
+.hero .hero_container .hero_info,
+.hero .hero_container .hero_info .hero_image {
+    flex: 1;
+    display: flex;
+    position: relative;
+    justify-self: center;
+    align-items: center;
+}
+
+.hero .hero_container .hero_info .hero_image .hero_img {
+    width: 300px;
+    min-width: 250px;
+    margin: auto;
+    border-radius: 20px;
+    transition: box-shadow 0.5s;
+    object-fit: cover;
+    object-position: right;
+    position: relative;
+    z-index: 10;
+}
+
+.hero .hero_container .hero_info .hero_image .image_shadow {
+    width: 50%;
+    height: 100%;
+    background-color: #393646;
+    position: absolute;
+    border-radius: 20px;
+    bottom: -.75rem;
+    right: 6.2rem;
+    border: 4px solid #F4EEE0;
+    z-index: 2;
+}
+
+.home_arrow,
+.home_butterfly,
+.home_flying_butterfly,
+.home_line {
+    position: absolute;
+    width: 50px;
+    transition: filter.4s;
+}
+
+.home_butterfly {
+    filter: invert();
+    left: 2rem;
+    bottom: 7rem;
+    rotate: -30deg;
+}
+
+.home_flying_butterfly {
+    filter: invert();
+    right: 3.7rem;
+    top: -1.3rem;
+    transform: scaleX(-1);
+    rotate: 20deg;
+}
+
+.home_arrow {
+    left: 10%;
+    bottom: 2rem;
+    rotate: 170deg;
+}
+
+.home_line {
+    rotate: 20deg;
+    right: 5rem;
+    bottom: -2.6rem;
+    z-index: 1;
+}
+
+/* .hero .hero_container .hero_image {
+    flex: 1;
+    display: flex;
+    position: relative;
+    justify-self: center;
+}
+
+.hero .hero_container .hero_image .hero_img {
+    width: 300px;
+    min-width: 250px;
+    margin: auto;
+    border-radius: 20px;
+    transition: box-shadow 0.5s;
+    object-fit: cover;
+    object-position: right;
+    position: relative;
+    z-index: 10;
+}
+
+.hero .hero_container .image_shadow {
+    width: 50%;
+    height: 100%;
+    background-color: #393646;
+    position: absolute;
+    border-radius: 20px;
+    bottom: -.75rem;
+    right: 6.2rem;
+    border: 4px solid #F4EEE0;
+    z-index: 2;
+}
+
+.home_arrow,
+.home_butterfly,
+.home_flying_butterfly,
+.home_line {
+    position: absolute;
+    width: 50px;
+    transition: filter.4s;
+}
+
+.home_butterfly {
+    filter: invert();
+    left: 2rem;
+    bottom: 7rem;
+    rotate: -30deg;
+}
+
+.home_flying_butterfly {
+    filter: invert();
+    right: 3.7rem;
+    top: -1.3rem;
+    transform: scaleX(-1);
+    rotate: 20deg;
+}
+
+.home_arrow {
+    left: 10%;
+    bottom: 2rem;
+    rotate: 170deg;
+}
+
+.home_line {
+    rotate: 20deg;
+    right: 5rem;
+    bottom: -2.6rem;
+    z-index: 1;
+} */
+
+.hero .hero_container .social_media .social_link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    list-style: none;
+    font-size: 1.5rem;
+}
+
+.hero .hero_container .social_media .social_link i {
+    color: #6D5D6E;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.5s;
+}
+
+.hero .hero_container .social_media .social_link i:hover {
+    color: #ffffff;
+}
+
+.portfolio {
+    padding: 8rem 2rem;
+}
+
+.portfolio .portfolio_container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.portfolio .portfolio_container .portfolio_description {
+    display: flex;
+    width: 100%;
+    position: relative;
+}
+
+.portfolio .portfolio_container .portfolio_title {
+    text-align: left;
+    font-size: 2rem;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.portfolio .portfolio_container .portfolio_description .title_shadow {
+    bottom: 1rem;
+    width: 100%;
+    height: 2px;
+    background-color: #ffffff;
+    border: 2px solid #F4EEE0;
+    margin: auto;
+}
+
+.achievement {
+    padding: 2rem;
+}
+
+.achievement .achievement_container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.achievement .achievement_container .achievement_description {
+    display: flex;
+    width: 100%;
+    position: relative;
+    justify-content: flex-end;
+}
+
+.achievement .achievement_container .achievement_description .achievement_title {
+    text-align: right;
+    font-size: 2rem;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.achievement .achievement_container .achievement_description .title_shadow {
+    bottom: 1rem;
+    width: 100%;
+    height: 2px;
+    background-color: #ffffff;
+    border: 2px solid #F4EEE0;
+    margin: auto;
+}
+
+.footer {
+    padding: 20px;
+    color: white;
+    background-color: #393646;
+    text-align: center;
+    width: 100%;
+}
+
+.footer .footer_text {
+    font-size: 0.8rem;
+    color: #a498a4;
+}
+
+.footer .footer_link {
+    text-decoration: none;
+    color: #F4EEE0;
+    font-weight: bold;
+}
+
+@media screen and (max-width: 576px) {
+
+    .header .nav {
+        padding-block: 10px;
+    }
+
+    .nav .nav_menu,
+    .nav .nav_button_close {
+        display: none;
+    }
+
+    .nav .show {
+        position: fixed;
+        inset-block: 0;
+        inset-inline: 0;
+        width: 100%;
+        max-height: 100%;
+        background-color: #4F4557;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 1.5rem;
+        z-index: 9999;
+    }
+
+    .nav .show .list_menu {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .nav .show .list_menu .list_item .link_menu {
+        font-size: 1.5rem;
+    }
+
+    .nav .show .list_menu .list_item::after {
+        content: '';
+        width: 0%;
+        height: 50px;
+        background-color: #a498a4;
+        position: absolute;
+        left: 0;
+        bottom: -.1rem;
+        transition: width .3s;
+        z-index: -1;
+        border-radius: 2rem;
+    }
+
+    .nav .show .list_menu .list_item:hover::after {
+        width: 100%;
+    }
+
+    .nav .show .list_menu .list_item.active::after {
+        width: 100%;
+    }
+
+    .nav .show .list_menu .list_item .link_menu::after {
+        display: none;
+    }
+
+    .nav .nav_button {
+        padding-block: 0.5rem;
+        padding-inline: 0.5rem;
+        color: #F4EEE0;
+        display: block;
+    }
+
+    .nav .nav_button i {
+        font-size: 1.4rem;
+        cursor: pointer;
+    }
+
+    .nav .nav_button_close {
+        display: block;
+        position: absolute;
+        font-size: 1.5rem;
+        top: 1rem;
+        right: 1.5rem;
+        cursor: pointer;
+        z-index: 9999;
+    }
+
+    .hero {
+        background-image: url(/assets/img/home.jpg);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+
+    .hero .hero_container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .hero .hero_container .hero_description {
+        padding: 2rem;
+    }
+
+    .hero .hero_container .hero_description .hero_title {
+        font-size: 3rem;
+    }
+
+    .hero .hero_container .hero_info .hero_image {
+        display: none;
+    }
+
+    .hero .hero_container .social_media .social_link {
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+        padding: 1rem;
+        font-size: 1.5rem;
+    }
+
+    .hero .hero_container .social_media .social_link i {
+        color: #6D5D6E;
+    }
+
+    .portfolio {
+        padding-top: 5rem;
+        padding-bottom: 0;
+    }
+
+    .achievement {
+        padding-top: 5rem;
+    }
+
+    .portfolio .portfolio_container,
+    .achievement .achievement_container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0;
+    }
+
+    .portfolio .portfolio_container .portfolio_description {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .portfolio .portfolio_container .portfolio_description .title {
+        flex-shrink: 0;
+    }
+
+    .portfolio .portfolio_container .portfolio_description .title_shadow {
+        height: 2px;
+        width: 100%;
+        border-radius: 20px;
+        border: 2px solid #F4EEE0;
+    }
+
+    .achievement .achievement_container .achievement_description {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .achievement .achievement_container .achievement_description .title {
+        flex-shrink: 0;
+    }
+
+    .achievement .achievement_container .achievement_description .title_shadow {
+        flex-grow: 1;
+        height: 2px;
+        width: 100%;
+        border-radius: 20px;
+        border: 2px solid #F4EEE0;
+    }
+
+    .image img {
+        width: 100%;
+        border-radius: 1rem;
+    }
+
+    .image p {
+        line-height: 1.5rem;
+        text-align: justify;
+    }
+
+    .description_content {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .title_content {
+        flex-shrink: 0;
+    }
+
+    .title_content_shadow {
+        flex-grow: 1;
+        height: 2px;
+        position: relative;
+        border-radius: 20px;
+        border: 2px solid #F4EEE0;
+    }
+
+    .content {
+        padding-top: 2rem;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 992px) {
+
+    .header .nav .nav_menu .nav_button_close {
+        display: none;
+    }
+
+    .hero {
+        height: 100vh;
+    }
+
+    .hero .hero_container {
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        justify-content: center;
+        gap: 4rem;
+    }
+
+    .hero .hero_container .hero_description .hero_title {
+        font-size: 4rem;
+    }
+
+    .hero .hero_container .hero_description p {
+        font-size: 1.2rem;
+    }
+
+    .hero .hero_container .hero_info {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .hero .hero_container .hero_info .hero_image .image_shadow {
+        width: 100%;
+        bottom: -.75rem;
+        left: 1rem;
+    }
+
+    .hero .hero_container .hero_info .hero_image .home_butterfly {
+        left: -6rem;
+    }
+
+    .hero .hero_container .hero_info .hero_image .home_flying_butterfly {
+        right: -4rem;
+    }
+
+    .hero .hero_container .hero_info .hero_image .home_arrow {
+        left: -4rem;
+        bottom: 1rem;
+    }
+
+    .hero .hero_container .hero_info .hero_image .home_line {
+        right: -2rem;
+    }
+
+    .hero .hero_container .social_media .social_link {
+        font-size: 1.5rem;
+    }
+
+    .hero .hero_container .social_media .social_link i {
+        color: #F4EEE0;
+    }
+
+    .portfolio .portfolio_container,
+    .achievement .achievement_container {
+        padding-inline: 2rem;
+    }
+
+    .portfolio img,
+    .achievement img {
+        width: 100%;
+        border-radius: 2rem;
+    }
+
+    .portfolio p,
+    .achievement p {
+        line-height: 1.5rem;
+        text-align: justify;
+    }
+
+    .portfolio {
+        padding-top: 5rem;
+    }
+
+    .achievement {
+        padding-top: 5rem;
+    }
+
+    .content {
+        padding-bottom: 2rem;
+    }
+
+    .description {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .description_content {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .title_content {
+        flex-shrink: 0;
+    }
+
+    .title_content_shadow {
+        width: 100%;
+        height: 2px;
+        position: relative;
+        border-radius: 20px;
+        color: #F4EEE0;
+        border: 2px solid #F4EEE0;
+        z-index: 9999;
+    }
+
+    aside .toggle_arrow {
+        display: none;
+    }
+
+    aside .social_media .social_link {
+        display: flex;
+        flex-direction: column;
+        flex-flow: column nowrap;
+        gap: 1.5rem;
+    }
+}
+
+@media screen and (min-width: 992px) {
+
+    .header .nav .nav_menu .nav_button_close {
+        display: none;
+    }
+
+    .hero_container {
+        display: flex;
+    }
+
+
+    .hero .hero_container .hero_info .hero_image .image_shadow {
+        bottom: -.75rem;
+        right: 5.5rem;
+    }
+
+    .hero .hero_container .hero_info .hero_image .home_flying_butterfly {
+        right: 3rem;
+    }
+
+    .hero .hero_container .hero_info .hero_image .home_line {
+        right: 4.5rem;
+    }
+
+    .portfolio img,
+    .achievement img {
+        width: 100%;
+        height: 100%;
+        border-radius: 20px;
+        object-fit: cover;
+    }
+
+    .portfolio p,
+    .achievement p {
+        line-height: 1.5rem;
+        text-align: justify;
+    }
+
+    .container {
+        padding-inline: 2rem;
+    }
+
+    .portfolio_description {
+        gap: 2rem;
+    }
+
+    .portfolio_title {
+        flex-shrink: 0;
+    }
+
+    .title_shadow {
+        width: 100%;
+        flex-grow: 1;
+    }
+
+    .image {
+        width: calc(100% - 2rem);
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+    }
+
+    .content {
+        width: calc(50% - 1rem);
+        display: flex;
+        flex-direction: column;
+    }
+
+    .description_content {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .title_content {
+        flex-shrink: 0;
+    }
+
+    .title_content_shadow {
+        flex-grow: 1;
+        width: 100%;
+        height: 2px;
+        position: relative;
+        border-radius: 20px;
+        color: #F4EEE0;
+        border: 2px solid #F4EEE0;
+    }
+
+    .achievement {
+        padding-top: 5rem;
+    }
+
+    .achievement .achievement_description {
+        display: flex;
+        flex-direction: row-reverse;
+        width: 100%;
+        position: relative;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .achievement .achievement_description .achievement_title {
+        flex-shrink: 0;
+    }
+
+    .achievement .achievement_description .title_shadow {
+        flex-grow: 1;
+    }
+}
