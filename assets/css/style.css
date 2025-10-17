@@ -456,8 +456,7 @@ p {
   }
 
   .hero {
-    /* PERBAIKAN PATH DISINI */
-    background-image: url(../assets/img/home.jpg);
+    background-image: url(assets/img/home.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
