@@ -15,6 +15,9 @@
       rel="stylesheet"
     />
 
+    <!-- aos -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
     <!-- Font Awesome 5.15.4 -->
     <link
       rel="stylesheet"
@@ -63,32 +66,43 @@
       <section class="hero" id="home">
         <div class="hero_container">
           <div class="hero_description">
-            <h1 class="hero_title">Hello Everyone</h1>
-            <p>
-              My name is Arie Fajar Bachtiar, i am a web developer. I study at
-              Jember State Polytechnic. Basically I'm a backend developer, but I
-              like frontend developer because of someone. I'm trying to learn
-              frontend developer for it and i like butterflies.
+            <h1 class="hero_title" data-gsap="fade-up">Hello Everyone</h1>
+            <p data-gsap="fade-up" data-delay="200">
+              My name is Arie Fajar Bachtiar, i am a
+              <span class="typed"></span>. I study at Jember State Polytechnic.
+              Basically I'm a backend developer, but I like frontend developer
+              because of someone. I'm trying to learn frontend developer for it
+              and i like butterflies.
             </p>
           </div>
-          <aside class="hero_info">
+          <aside class="hero_info" data-gsap="fade-up">
             <div class="hero_image">
               <img
                 src="assets/img/home.jpg"
                 alt="hero image"
                 class="hero_img"
+                data-gsap="zoom-out"
+                data-delay="200"
               />
-              <div class="image_shadow"></div>
+              <div
+                class="image_shadow"
+                data-gsap="zoom-in"
+                data-delay="400"
+              ></div>
 
               <img
                 src="assets/img/butterlfy.svg"
                 alt=""
                 class="home_butterfly"
+                data-gsap="fade-up"
+                data-delay="400"
               />
               <img
                 src="assets//img/flying-butterfly.svg"
                 alt=""
                 class="home_flying_butterfly"
+                data-gsap="fade-left"
+                data-delay="500"
               />
               <img
                 src="assets/img/curved-arrow.svg"
@@ -100,19 +114,20 @@
             <div class="social_media">
               <ul>
                 <div class="social_link">
-                  <li>
+                  <li data-gsap="fade-up" data-delay="100">
                     <a
-                      href="https://www.linkedin.com/in/arie-fajar-bachtiar-0797aa24a/"
+                      href="https://www.linkedin.com/in/arie-fajar-bachtiar/"
+                      target="_blank"
                       ><i class="fab fa-linkedin-in"></i
                     ></a>
                   </li>
-                  <li>
-                    <a href="https://github.com/arieeefajar"
+                  <li data-gsap="fade-up" data-delay="200">
+                    <a href="https://github.com/arieeefajar" target="_blank"
                       ><i class="fab fa-github"></i
                     ></a>
                   </li>
-                  <li>
-                    <a href="https://wa.me/+6281252285604"
+                  <li data-gsap="fade-up" data-delay="300">
+                    <a href="https://wa.me/+6288803722077" target="_blank"
                       ><i class="fab fa-whatsapp"></i
                     ></a>
                   </li>
@@ -126,61 +141,106 @@
       <section class="portfolio" id="portfolio">
         <div class="portfolio_container container">
           <div class="portfolio_description description">
-            <h1 class="portfolio_title title">Portfolio</h1>
-            <div class="title_shadow"></div>
+            <h1 class="portfolio_title title" data-aos="fade-right">
+              Portfolio
+            </h1>
+            <div class="title_shadow" data-aos="fade-left"></div>
           </div>
           <div class="portfolio_img image">
-            <article class="simi content">
-              <img src="assets/img/simi.png" alt="simi img" />
+            <article class="simi content" data-aos="fade-up">
+              <img src="assets/img/simi.png" alt="simi img" class="card" />
               <div class="simi_description description_content">
-                <h2 class="simi_title title_content">SIMI</h2>
-                <div class="simi_tilte_shadow title_content_shadow"></div>
+                <h2 class="simi_title title_content" data-aos="fade-right">
+                  SIMI
+                </h2>
+                <div
+                  class="simi_tilte_shadow title_content_shadow"
+                  data-aos="fade-left"
+                ></div>
               </div>
-              <p>
-                Market intelligence application with the main features of
-                questionnaires and text mining for company decision making
-              </p>
+              <p
+                data-typed="Market intelligence application with the main features of
+                questionnaires and text mining for company decision making"
+                data-loop="false"
+                data-speed="30"
+                data-cursor="false"
+              ></p>
             </article>
-            <article class="sage content">
-              <img src="assets/img/sage.png" alt="sage img" />
+            <article class="sage content" data-aos="fade-up">
+              <img src="assets/img/sage.png" alt="sage img" class="card" />
               <div class="sage_description description_content">
-                <h2 class="sage_title title_content">PT. Sage</h2>
-                <div class="sage_tilte_shadow title_content_shadow"></div>
+                <h2 class="sage_title title_content" data-aos="fade-right">
+                  Web Profile PT. Sage
+                </h2>
+                <div
+                  class="sage_tilte_shadow title_content_shadow"
+                  data-aos="fade-left"
+                ></div>
               </div>
-              <p>
-                Web profile for PT. Sage for company profile. Create using
-                bootstrap 5, javascript, html and css.
-              </p>
+              <p
+                data-typed="Web profile for PT. Sage for company profile. Create using
+                bootstrap 5, javascript, html and css."
+                data-loop="false"
+                data-speed="30"
+                data-cursor="false"
+              ></p>
             </article>
-            <article class="WebFarda content">
-              <img src="assets/img/web_farda.jpeg" alt="web farda" />
+            <article class="WebFarda content" data-aos="fade-up">
+              <img
+                src="assets/img/web_farda.jpeg"
+                alt="web farda"
+                class="card"
+              />
               <div class="web_farda_description description_content">
-                <h2 class="web_farda_title title_content">SI Farda</h2>
-                <div class="web_farda_shadow title_content_shadow"></div>
+                <h2 class="web_farda_title title_content" data-aos="fade-right">
+                  SI Farda
+                </h2>
+                <div
+                  class="web_farda_shadow title_content_shadow"
+                  data-aos="fade-left"
+                ></div>
               </div>
-              <p>
-                Web application for point of sale, managing transaction data, to
+              <p
+                data-typed="Web application for point of sale, managing transaction data, to
                 provide data information to the owner. Created using native php,
-                html, css, bootstrap, javascript.
-              </p>
+                html, css, bootstrap, javascript."
+                data-loop="false"
+                data-speed="30"
+                data-cursor="false"
+              ></p>
             </article>
 
-            <article class="dekstopFarda content">
-              <img src="assets/img/dekstop_farda.jpeg" alt="dekstop farda" />
+            <article class="dekstopFarda content" data-aos="fade-up">
+              <img
+                src="assets/img/dekstop_farda.jpeg"
+                alt="dekstop farda"
+                class="card"
+              />
               <div class="dekstop_farda_description description_content">
-                <h2 class="dekstop_farda_title title_content">Farda Cashier</h2>
-                <div class="dekstop_farda_shadow title_content_shadow"></div>
+                <h2
+                  class="dekstop_farda_title title_content"
+                  data-aos="fade-right"
+                >
+                  Farda Cashier
+                </h2>
+                <div
+                  class="dekstop_farda_shadow title_content_shadow"
+                  data-aos="fade-left"
+                ></div>
               </div>
-              <p>
-                Desktop application for point of sale, managing transaction
-                data. Created using the Java programming language.
-              </p>
+              <p
+                data-typed="Desktop application for point of sale, managing transaction
+                data. Created using the Java programming language."
+                data-loop="false"
+                data-speed="30"
+                data-cursor="false"
+              ></p>
             </article>
           </div>
         </div>
       </section>
 
-      <section class="achievement" id="achievment">
+      <section class="achievement" id="achievment" data-aos="zoom-in">
         <div class="achievement_container container">
           <div class="achievement_description description">
             <h1 class="achievement_title title">Achievment</h1>
@@ -229,6 +289,23 @@
       </span>
     </footer>
 
+    <!-- aos -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+    <!-- vanilla tilt -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.2/vanilla-tilt.min.js"></script>
+
+    <!-- typed.js -->
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
+    <!-- gsap -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+    <!-- ScrollTrigger -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <script src="assets/js/typedManager.js"></script>
+    <script src="assets/js/animation.js"></script>
     <script src="assets/js/main.js"></script>
   </body>
 </html>

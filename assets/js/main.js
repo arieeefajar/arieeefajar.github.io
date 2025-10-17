@@ -34,3 +34,29 @@ menuLinks.forEach(function (link) {
     this.parentNode.classList.add("active");
   });
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  new TypedManager();
+});
+
+AOS.init({
+  duration: 1000,
+  once: true,
+  offset: 0,
+});
+
+VanillaTilt.init(document.querySelectorAll(".card"), {
+  max: 15,
+  speed: 400,
+  glare: true,
+  "max-glare": 0.2,
+});
+
+document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+  anchor.addEventListener("click", function (e) {
+    e.preventDefault();
+    document.querySelector(this.getAttribute("href")).scrollIntoView({
+      behavior: "smooth",
+    });
+  });
+});
